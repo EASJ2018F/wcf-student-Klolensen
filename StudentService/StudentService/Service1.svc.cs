@@ -44,9 +44,8 @@ namespace StudentService
 
         public void EditStudent(string nuværendeNavn, string nytNavn, string nytKlasseNavn, string nytRum)
         {
-            _students[nuværendeNavn].Navn = nytNavn;
-            _students[nuværendeNavn].KlasseNavn = nytKlasseNavn;
-            _students[nuværendeNavn].Rum = nytRum;
+            _students.Remove(nuværendeNavn);
+            _students.Add(nytNavn, new Student(nytNavn, nytKlasseNavn, nytRum));
         }
     }
 }
