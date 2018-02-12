@@ -12,13 +12,8 @@ namespace StudentService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        private Dictionary<string, Student> _students;
-
-        public Service1()
-        {
-            _students = new Dictionary<string, Student>();
-        }
-
+        private static Dictionary<string, Student> _students = new Dictionary<string, Student>();
+        
         public void AddStudent(string navn, string klasseNavn, string rum)
         {
             _students.Add(navn, new Student(navn, klasseNavn, rum));
